@@ -26,13 +26,7 @@ const config = [
   {
     input: 'src/index.ts',
     // ignore lib
-    external: [
-      'react',
-      'react-dom',
-      'lodash',
-      'lodash-es',
-      ...Object.keys(globals),
-    ],
+    external: ['react', 'react-dom', 'lodash', 'lodash-es', ...Object.keys(globals)],
 
     output: [
       {
@@ -46,6 +40,19 @@ const config = [
         sourcemap: true,
         plugins: [minify()],
       },
+      // {
+      //   file: `${dir}/index.umd.js`,
+      //   name: 'my_package',
+      //   format: 'umd',
+      //   sourcemap: true,
+      // },
+      // {
+      //   file: `${dir}/index.umd.min.js`,
+      //   name: 'my_package',
+      //   format: 'umd',
+      //   sourcemap: true,
+      //   plugins: [minify()],
+      // },
       {
         file: `${dir}/index.js`,
         format: 'esm',
@@ -79,6 +86,6 @@ const config = [
 
     treeshake: true,
   },
-]
+];
 
 export default config
